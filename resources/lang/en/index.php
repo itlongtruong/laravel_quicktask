@@ -30,6 +30,7 @@ return [
     'check_email' => 'Before proceeding, please check your email for a verification link.',
     'send_mail_fail' => 'If you did not receive the email',
     'new_request' => 'Click here to request another',
+    'common_errors'=>'Whoops! Something went wrong!',
     'lang' => [
         'en' => 'English',
         'vi' => 'Tiếng Việt',

@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::resource('/tasks','TaskController');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();

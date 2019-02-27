@@ -34,6 +34,7 @@ return [
     'check_email' => 'Trước khi tiếp tục, vui lòng kiểm tra email của bạn để biết liên kết xác minh.',
     'send_mail_fail' => 'Nếu bạn không nhận được email',
     'new_request' => 'Bấm vào đây để yêu cầu cái khác',
+    'common_errors'=>'Rất tiếc! Đã xảy ra lỗi!',
     'lang' => [
         'en' => 'English',
         'vi' => 'Tiếng Việt',
