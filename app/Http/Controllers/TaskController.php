@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\AddTasksRequest;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Task;
 use App\Models\User;
 
@@ -45,7 +46,10 @@ class TaskController extends Controller
      */
     public function store(AddTasksRequest $request)
     {
+        $user = Auth::user();
+        $id = Auth::id();
         $task = new Task;
+        $task->user_id = $request->user()->id;
         $task->name = $request->name;
         $task->save();
         return redirect()->back()->with('success', trans('index.success'));
@@ -95,6 +99,7 @@ class TaskController extends Controller
     {
         try {
             $task = Task::findOrFail($id);
+            $this->authorize('destroy', $task);
             $task->delete();
             
             return redirect("/tasks")->with('success', trans('index.delete-success'));
